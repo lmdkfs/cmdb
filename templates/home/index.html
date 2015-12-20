@@ -3,10 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Richie-CMDB</title>
+    <link href="/static/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 <body>
 <div>
-    test
+    <div class="container">
+    <form role="form">
+        <div class="input-group input-group-lg">
+            <span class="input-group-addon">用户名</span>
+            {{ model.username }}
+        </div>
+        <div class="input-group input-group-lg">
+            <span class="input-group-addon">密  码</span>
+            {{ model.password }}
+        </div>
+    </form>
+
+    </div>
 </div>
 </body>
 </html>
