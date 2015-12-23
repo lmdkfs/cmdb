@@ -4,27 +4,27 @@
     <meta charset="UTF-8">
     <title>Richie-CMDB</title>
     <link href="/static/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+    <link href="/static/css/customer.css" rel="stylesheet">
 </head>
 <body>
 <div>
-    <div class="container">
+    <div class="container login">
     <form role="form" class="form-horizontal">
         <div class="form-group  ">
             <!-- lable标签必须有,如果在页面上不想看到label的内容,可以使用class='sr-only'隐藏  -->
-            <label class="col-sm-2 control-label">用户名</label>
-            <div class="col-sm-10">
+            <label class="col-sm-offset-2 col-sm-2 control-label">用户名</label>
+            <div class=" col-sm-6 ">
                    {{ model.username }}
             </div>
         </div>
         <div class="form-group ">
-            <label class="col-sm-2 control-label">密码</label>
-            <div class="col-sm-10">
+            <label class="col-sm-offset-2 col-sm-2 control-label">密码</label>
+            <div class="col-sm-6">
                 {{ model.password }}
             </div>
         </div>
         <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
+            <div class="col-sm-offset-4 col-sm-8">
                 <div class="checkbox">
                     <label>
                         <input type="checkbox">记住密码
@@ -34,7 +34,7 @@
             </div>
         </div>
         <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
+            <div class="col-sm-offset-4 col-sm-8">
                 <button type="submit" class="btn-default">登录</button>
 
             </div>
