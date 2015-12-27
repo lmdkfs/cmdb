@@ -2,7 +2,7 @@
 # -*-coding: utf-8 -*-
 # __author__ = 'Richie'
 import random
-from PIL import Image, ImageDraw, ImageFilter
+from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 _letter_cases = "abcdefghjkmnpqrstuvwxy" # 小写字母，去除可能干扰的i，l，o，z
 _upper_cases = _letter_cases.upper() # 大写字母
@@ -76,3 +76,11 @@ def create_validate_code(size=(120,30),
                 if tmp > 100 - chace:
                     draw.point((w, h ), fill=(0, 0, 0))
 
+    def creat_strs():
+        """
+        :绘制验证码字符
+        """
+        c_chars = get_chars()
+        strs = ' {} '.format(' '.join(c_chars)) # 每个字符前后以空格隔开
+
+        font = ImageFont.truetype(font_type, font_size)
