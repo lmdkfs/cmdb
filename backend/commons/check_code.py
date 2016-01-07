@@ -84,4 +84,32 @@ def create_validate_code(size=(120,30),
         strs = ' {} '.format(' '.join(c_chars)) # 每个字符前后以空格隔开
 
         font = ImageFont.truetype(font_type, font_size)
+        font_width, font_height = font.getsize(strs)
+
+        draw.text(((width - font_height) / 3, (height - font_height) / 3),
+                    strs, font=font, fill=fg_color)
+
+        return ''.join(c_chars)
+
+    if draw_lines:
+        create_lines()
+    if draw_points:
+        create_points()
+    strs = creat_strs()
+
+    # 图形扭曲参数
+    params = [1 - float(random.randint(1, 2) / 100),
+              0,
+              0,
+              0,
+              1 - float(random.randint(1, 10)) / 100,
+              float(random.randint(1, 2)) / 500,
+              0.001,
+              float(random.randint(1, 2)) / 500
+              ]
+    img = img.transform(size, Image.PERSPECTIVE, params) # 创建扭曲
+
+    img = img.filter(ImageFilter.EDGE_ENHANCE_MORE) # 滤镜，边界加强（阈值更大）
+    return img, strs
+
 

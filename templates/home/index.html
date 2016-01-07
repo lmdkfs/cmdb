@@ -9,7 +9,7 @@
 <body>
 <div>
     <div class="container login">
-    <form role="form" class="form-horizontal">
+    <form role="form" class="form-horizontal" id="Form">
         <div class="form-group  ">
             <!-- lable标签必须有,如果在页面上不想看到label的内容,可以使用class='sr-only'隐藏  -->
             <label class="col-sm-offset-2 col-sm-2 control-label">用户名</label>
@@ -23,12 +23,13 @@
                 {{ model.password }}
             </div>
         </div>
-         <div class="input-group">
-             <span class="col-sm-3 input-group-addon"><i class="fa fa-pencil-square-o"></i></span>
-             <input type="text" name="checkcode" class="col-sm-offset-6 col-sm-2  check-code" placeholder="验证码">
-             <img class='col-sm-offset-10 col-sm-2' onclick='ChangeCode();' id='imgCode' src="/account/checkcode/">
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-pencil-square-o"></i></span>
+            <input type="text" name="checkcode" class="form-control check-code" placeholder="验证码">
+            <img onclick='ChangeCode();' id='imgCode' src="/account/checkcode/">
 
-         </div>
+        </div>
+
         <div class="form-group">
             <div class="col-sm-offset-4 col-sm-8">
                 <div class="checkbox">
@@ -49,5 +50,17 @@
 
     </div>
 </div>
+<script src="/static/js/jquery-2.1.4.min.js"></script>
+<script src="/static/js/valid.js"></script>
+<script type="text/javascript">
+        	$(function(){
+    		$.login('#Form','');
+    	})
+
+    function ChangeCode() {
+        var code = document.getElementById('imgCode');
+        code.src += '?';
+    }
+</script>
 </body>
 </html>
