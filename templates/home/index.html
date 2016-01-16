@@ -12,21 +12,24 @@
     <form role="form" class="form-horizontal" id="Form">
         <div class="form-group  ">
             <!-- lable标签必须有,如果在页面上不想看到label的内容,可以使用class='sr-only'隐藏  -->
-            <label class="col-sm-offset-2 col-sm-2 control-label">用户名</label>
-            <div class=" col-sm-4 ">
+            <label class="col-md-offset-2 col-md-2 control-label"><p class="text-justify">用户名</p></label>
+            <div class=" col-md-4 ">
                    {{ model.username }}
             </div>
         </div>
         <div class="form-group ">
-            <label class="col-sm-offset-2 col-sm-2 control-label">密码</label>
-            <div class="col-sm-4">
+            <label class="col-md-offset-2 col-md-2 control-label"><p class="text-justify">密码</p></label>
+            <div class="col-md-4">
                 {{ model.password }}
             </div>
         </div>
-        <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-pencil-square-o"></i></span>
-            <input type="text" name="checkcode" class="form-control check-code" placeholder="验证码">
-            <img onclick='ChangeCode();' id='imgCode' src="/account/checkcode/">
+        <div class="form-group">
+            <label class="col-md-offset-2 col-md-2 control-label"><p class="text-justify">验证码</p></label>
+            <div class="col-md-4">
+                <input type="text" name="checkcode"  placeholder="验证码">
+                <img onclick='ChangeCode();' id='imgCode' src="/account/checkcode/">
+            </div>
+
 
         </div>
 
@@ -51,12 +54,12 @@
     </div>
 </div>
 <script src="/static/js/jquery-2.1.4.min.js"></script>
-<script src="/static/js/valid.js"></script>
+<!--<script src="/static/js/valid.js"></script> -->
 <script type="text/javascript">
-        	$(function(){
+        	/*$(function(){
     		$.login('#Form','');
     	})
-
+*/
     function ChangeCode() {
         var code = document.getElementById('imgCode');
         code.src += '?';

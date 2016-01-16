@@ -14,11 +14,18 @@ import json
 def check_code(request):
     stream_obj = StringIO.StringIO()
     validate_code = create_validate_code()
+    print validate_code, '???????'
     img = validate_code[0]
     img.save(stream_obj, 'GIF')
     request.session['CheckCode'] = validate_code[1]
     print stream_obj
     return HttpResponse(stream_obj.getvalue())
+
+def richie(request):
+    print 'welcome'
+    return  HttpResponse('hello Richie')
+
+
 
 def login(request):
     error = ''
