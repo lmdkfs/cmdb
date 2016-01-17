@@ -9,5 +9,6 @@ from web_manage.views import account
 urlpatterns = [
     url(r'account/checkcode/$', account.check_code),
     url(r'account/login/$', account.login),
+    url(r'home/index/$', home.index),
     url(r'richie/$', account.richie),
 ]

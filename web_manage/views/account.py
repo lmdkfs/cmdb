@@ -31,7 +31,7 @@ def login(request):
     login_form = LoginForm(request.POST)
     if request.method == 'POST':
         check = request.POST.get('checkcode', None)
-        print check
+        print check,'>>>>>>>>>>'
         if check != request.session['CheckCode'].lower():
             error = '验证码错误'
         else:
@@ -43,7 +43,7 @@ def login(request):
                 if result.status:
                     ret = {'id':result.data.user_info.id, 'name': result.data.user_info.name}
                     request.session['auth_user'] = json.dumps(ret)
-                    target = request.GET.get('back', '/account/index.html')
+                    target = request.GET.get('back', '/home/index/')
                     return redirect(target)
                 else:
                     error = '用户名或密码错误'
