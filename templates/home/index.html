@@ -7,16 +7,33 @@
 </head>
 <body>
     <div class="container">
-        <ul class="nav nav-tabs" role="tablist">
+        <!-- nav-justified 使充菜单满全屏-->
+        <ul id='mytab' class="nav nav-pills nav-justified" role="tablist">
             <li role="presentation" class="active"><a href="">HOME</a></li>
             <li role="presentation" ><a href="">group1</a></li>
             <li role="presentation" ><a href="">group2</a></li>
-            <li role="presentation" ><a href="">group3</a></li>
+            <li role="presentation" class="dropdown"><a href="" class="dropdown-toggle">group3
+                <span class="caret"> </span>
+
+            </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" >hello1</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" >hello2</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" >hello3</a></li>
+                </ul>
+            </li>
         </ul>
     </div>
 
 
 <script src="/static/js/jquery-2.1.4.min.js"></script>
+<script src="/static/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script>
+    $('#mytab a').click(function(e){
+        e.preventDefault();
+        $(this).tab('show');
+    })
+</script>
 
 </body>
 </html>
