@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="2835677184">
+  <component name="DataSourceManagerImpl" format="xml" hash="3272958866">
     <data-source source="LOCAL" name="cmdb" uuid="25c97400-1636-4f0a-a0bb-5c8171822fad">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
